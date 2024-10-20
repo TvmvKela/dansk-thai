@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  tvmv-nicegui-template:
+    image: zauberzeug/nicegui:latest
+    restart: always
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    volumes:
+      - ./app:/app # mounting local app directory
+      - ./logs:/logs # mounting local logs directory
+    env_file:
+      - .env
